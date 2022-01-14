@@ -1,10 +1,10 @@
-// 시간 초과
 import java.util.*;
 import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         FastReader fr = new FastReader();
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = fr.nextInt();
         int[] arr = new int[n];
         int[] sorted = new int[n];
@@ -14,9 +14,9 @@ public class Main {
         
         mergeSort(arr, sorted, 0, n - 1);
         
-        for(int i = 0; i < n; i++) System.out.println(arr[i]);
+        for(int i = 0; i < n; i++) bw.write(arr[i] + "\n");
+        bw.flush();
     }
-
     public static void merge(int arr[], int sorted[], int m, int middle, int n) {
         int i = m, j = middle + 1, k = m;
 
@@ -30,7 +30,6 @@ public class Main {
 
         for(int t = m; t <= n; t++) arr[t] = sorted[t];
     }
-    
     public static void mergeSort(int arr[], int sorted[], int m, int n) {
         int middle;
         if(m < n) {
@@ -40,7 +39,6 @@ public class Main {
             merge(arr, sorted, m, middle, n);
         }
     }
-    
     public static class FastReader {
         BufferedReader br;
         StringTokenizer st;
