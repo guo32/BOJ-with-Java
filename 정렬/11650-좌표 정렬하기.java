@@ -24,7 +24,6 @@ class Point implements Comparable<Point> {
 public class Main {
     public static void main(String[] args) throws IOException {
         FastReader fr = new FastReader();
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = fr.nextInt();
         ArrayList<Point> arrayList = new ArrayList<>();
 
@@ -38,7 +37,6 @@ public class Main {
         for(int i = 0; i < n; i++) {
             System.out.println(arrayList.get(i));
         }
-        bw.flush();
     }
     public static class FastReader {
         BufferedReader br;
